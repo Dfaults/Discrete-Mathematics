@@ -19,11 +19,10 @@ using namespace std;
 
 // Function declaration.
 	double recursiveMode(double, double, int);
+	double iterativeMode(double, double, int);
 
 int main(int argc, char const *argv[])
 {
-
-	
 
 	// User message to enter the values to be calculated.
 	cout << "Welcome to the annual interest calculator!\n";
@@ -39,6 +38,7 @@ int main(int argc, char const *argv[])
 
 	// Function Calls.
 	recursiveMode(balance, interest, month);
+	iterativeMode(balance, interest, month);
 
 	return 0;
 }
