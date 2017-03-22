@@ -61,7 +61,7 @@ double iterativeMode(double balance, double interest, int month){
 
 	for (int i = 0; i < month; ++i)
 	{
-		newBalance = pow((1* interest), month) * balance
+		newBalance = pow((1 * interest), month) * balance;
 	}
 
 	return newBalance;
