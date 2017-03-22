@@ -1,4 +1,6 @@
 /*
+
+	 Author: Dfaults
 	 Objectives: Assume that a set of n elements is represented as an array. Write a program to represent the sets operations X (INTERSECTION) Y, X (UNION) Y, X (DIFFERENCE) Y, and complement, given the arrays representing X and Y.
 				 Assume that a set of n elements is represented as an array. Write a program to represent the operation of X (SYMETRIC DIFFERENCE) Y, given the arrays representing X and Y (the symmetric difference is denoted).
 				 Let X, Y two arrays. Write a program to determine whether  X is a proper subset of Y.
