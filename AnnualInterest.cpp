@@ -48,9 +48,11 @@ double recursiveMode(double balance, double interest, int month){
 
 	// Calculates the new balance by recursively calling itself.
 
-	//newBalance = 
+	newBalance = pow((1 * interest), month) * balance;
 
-	recursiveMode(balance, interest, month);
+	recursiveMode(newBalance, interest, month);
+
+	return newBalance;
 }
 
 double iterativeMode(double balance, double interest, int month){
@@ -59,6 +61,8 @@ double iterativeMode(double balance, double interest, int month){
 
 	for (int i = 0; i < month; ++i)
 	{
-		//newBalance = 
+		newBalance = pow((1* interest), month) * balance
 	}
+
+	return newBalance;
 }
