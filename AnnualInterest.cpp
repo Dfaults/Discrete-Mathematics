@@ -18,8 +18,8 @@ using namespace std;
 	double interest, balance, newBalance;
 
 // Function declaration.
-	double recursiveMode(double, double, int);
-	double iterativeMode(double, double, int);
+	void recursiveMode(double, double, int);
+	void iterativeMode(double, double, int);
 
 int main(int argc, char const *argv[])
 {
@@ -44,25 +44,36 @@ int main(int argc, char const *argv[])
 }
 
 
-double recursiveMode(double balance, double interest, int month){
+void recursiveMode(double balance, double interest, int month){
 
 	// Calculates the new balance by recursively calling itself.
 
-	newBalance = pow((1 * interest), month) * balance;
+	int time = 1;
 
-	recursiveMode(newBalance, interest, month);
+	if (time == month)
+	{
+		// Escape the function.
+		cout << "The new balance after interest is payed is: " << newBalance << endl;
+		return;
+	}else{
 
-	return newBalance;
+		newBalance = pow((1 * interest), time) * balance;
+	}
+	recursiveMode(newBalance, interest, time + 1);
+
+	//return newBalance;
 }
 
-double iterativeMode(double balance, double interest, int month){
+void iterativeMode(double balance, double interest, int month){
 
 	// Calculates the new balance by iterating the months one by one until the calculation is complete.
 
 	for (int i = 0; i < month; ++i)
 	{
-		newBalance = pow((1 * interest), month) * balance;
+		newBalance = pow((1 * interest), i) * balance;
 	}
 
-	return newBalance;
+	cout << "The new balance after interest is payed is: " << newBalance << endl;
+
+	//	return newBalance;
 }
