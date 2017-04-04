@@ -57,7 +57,7 @@ void recursiveMode(double balance, double interest, int month){
 		return;
 	}else{
 
-		newBalance = pow((1 * interest), time) * balance;
+		newBalance += pow((1 * interest), time) * balance;
 	}
 	recursiveMode(newBalance, interest, time + 1);
 
