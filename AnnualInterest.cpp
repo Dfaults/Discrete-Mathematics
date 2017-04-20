@@ -5,6 +5,12 @@
 				 to calculate that insterest, and the amount of money that will be gaining the interest during that time.
 				 This must be done in both ITERATIVE mode and RECURSIVE mode in order to prove that it can be done by
 				 either way and it will have the same results.
+
+				 A bank pay 6% annual interest on saving, compounding the interest monthly. If we deposit $1000 on the 
+				 first day of May, how much will this deposit be worth a year later? Write a program to solve the above problem.
+				 Use two versions:
+						Using iterative solution
+						Recursive solution
 */
 
 #include <iostream>
