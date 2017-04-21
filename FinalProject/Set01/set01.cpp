@@ -5,11 +5,17 @@ using namespace std;
 
 
 void EqualFunction();
+void printMatch(bool flag, double match, const int SIZE);
 
 
+
+const int SIZE = 5;
+bool flag = false;
+double X[SIZE], Y[SIZE];
 
 int main(int argc, char const *argv[])
 {
+	int option;
 
 	cout << " Welcome to the first SET choose an option to begin. \n\n";
 	cout << " 1. Determine whether X value equals Y value \n";
@@ -42,9 +48,8 @@ int main(int argc, char const *argv[])
 
 
 void EqualFunction(){
-	// This function calculates the first option in the SET (Determine whether X value equals Y value). 
-	int SIZE = 3, option;
-	double X[SIZE], Y[SIZE], equals[];
+	// This function calculates the first option in the SET (Determine whether X value equals Y value).
+	
 
 	cout << " Enter the values of the first array. There must be " << SIZE << " values in this array and separated by white spaces: ";
 		for (int i = 0; i < SIZE; ++i)
@@ -53,6 +58,8 @@ void EqualFunction(){
 			cin >> X[i];
 		}
 
+		cout << endl;
+
 	cout << " Enter the valuesof the second array. There must be " << SIZE << " values in this array and separated by white spaces: ";
 		for (int i = 0; i < SIZE; ++i)
 		{
@@ -60,23 +67,48 @@ void EqualFunction(){
 			cin >> Y[i];
 		}
 
+		cout << endl;
+
 	for (int i = 0; i < SIZE; ++i)
 	{
-		/* Find if values are equals in both arrays. */
-
-		if (X[i] == Y[i])
+		X[i];
+		for (int k = 0; k < SIZE; k++)
 		{
-			/* Store the values that are equals */
-			equals[i] = X[i];
+			/* Find if values are equals in both arrays. */
+			if (X[i] == Y[k])
+			{
+				/* Store the values that are equals */
+				//equals[k] = X[i];
+				flag = true;
+				double match = X[i];
+				printMatch(flag, match, SIZE);
 
+			}
+			else {
+				flag = false;
+				printMatch(flag, NULL, SIZE);
+			}
 		}
+		
 	}
 
-	cout << " Matches were found! \n The values are: ";
-	for (int i = 0; i < SIZE; ++i)
+	system("pause");
+
+
+}
+
+
+void printMatch(bool flag, double match, const int SIZE) {
+
+	// This functions only job is to check if the flag and print out a message to the user.
+
+	if (flag != false)
 	{
-		/* Print the matching values to the user */
-		cout << equals[i] << " ";
+		cout << " Matches were found! \n The values are: " << match << " ";
+		
+	}
+	else if(flag == false){
+		//cout << " No Matches were found in the arrays :( \n\n";
 	}
 
 }
