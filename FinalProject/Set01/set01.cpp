@@ -4,9 +4,10 @@
 using namespace std;
 
 
-void EqualFunction();
+void equalFunction();
 void printMatch(bool flag, double match, const int SIZE);
-void InverseRelation();
+void inverseRelation();
+void yearlyInvestment();
 
 
 
@@ -29,12 +30,13 @@ int main(int argc, char const *argv[])
 
 	switch(option){
 		case 1:
-			EqualFunction();
+			equalFunction();
 			break;
 		case 2:
-			InverseRelation();
+			inverseRelation();
 			break;
 		case 3:
+			yearlyInvestment();
 			break;
 		case 4:
 			break;
@@ -49,7 +51,7 @@ int main(int argc, char const *argv[])
 }
 
 
-void EqualFunction(){
+void equalFunction(){
 	// This function calculates the first option in the SET (Determine whether X value equals Y value).
 	
 
@@ -116,7 +118,7 @@ void printMatch(bool flag, double match, const int SIZE) {
 }
 
 
-void InverseRelation() {
+void inverseRelation() {
 
 	const int ARRAY_SIZE = 3;
 	double straight[ARRAY_SIZE], reverse[ARRAY_SIZE];
@@ -127,7 +129,12 @@ void InverseRelation() {
 	{
 		cin >> straight[i];
 	}
-	
+
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		reverse[i] = straight[i];
+	}
+
 	cout << endl;
 
 	cout << " The reversse order of the array is: ";
@@ -139,5 +146,10 @@ void InverseRelation() {
 	cout << endl;
 
 	system("pause");
-	
+
+}
+
+void yearlyInvestment() {
+
+
 }

@@ -6,6 +6,6 @@
 
 3. Write a program that prints the amount accumulated yearly if a person invests n dollars at p percent annual interest compounded m times yearly. Write the program using two versions: (a) Using iterative solution (b) Recursive solution.
 
-4.Write a program that tests if a graph is a tree.
+4. Write a program that tests if a graph is a tree.
 
 ##These problems must be completed in order to conclude this set.
