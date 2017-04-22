@@ -6,6 +6,7 @@ using namespace std;
 
 void EqualFunction();
 void printMatch(bool flag, double match, const int SIZE);
+void InverseRelation();
 
 
 
@@ -31,6 +32,7 @@ int main(int argc, char const *argv[])
 			EqualFunction();
 			break;
 		case 2:
+			InverseRelation();
 			break;
 		case 3:
 			break;
@@ -111,4 +113,31 @@ void printMatch(bool flag, double match, const int SIZE) {
 		//cout << " No Matches were found in the arrays :( \n\n";
 	}
 
+}
+
+
+void InverseRelation() {
+
+	const int ARRAY_SIZE = 3;
+	double straight[ARRAY_SIZE], reverse[ARRAY_SIZE];
+
+	cout << " There are " << ARRAY_SIZE << " Spaces in this array and they must be separated by white spaces when entering values. \n\n";
+	cout << " Please tell me the values you would like to have in the array: ";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		cin >> straight[i];
+	}
+	
+	cout << endl;
+
+	cout << " The reversse order of the array is: ";
+	for (int i = ARRAY_SIZE - 1; i >= 0; i--)
+	{
+		cout << reverse[i] << " ";
+	}
+
+	cout << endl;
+
+	system("pause");
+	
 }
