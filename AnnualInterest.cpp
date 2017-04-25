@@ -20,66 +20,81 @@
 using namespace std;
 
 // Variable declaration.
-	int month;
+	int month, time = 0;
 	double interest, balance, newBalance;
 
 // Function declaration.
-	void recursiveMode(double, double, int);
+	void recursiveMode(double, double, int, int);
 	void iterativeMode(double, double, int);
 
 int main(int argc, char const *argv[])
 {
 
 	// User message to enter the values to be calculated.
-	cout << "Welcome to the annual interest calculator!\n";
-	cout << "Please enter the information in order to perform the calculation.\n";
-	cout << "Please enter the balance for the account: ";
+	cout << " Welcome to the annual interest calculator!\n";
+	cout << "\n Please enter the information in order to perform the calculation.\n";
+	cout << "\n Please enter the balance for the account: ";
 	cin >> balance;
 
-	cout << "Now enter the number of months you would like to calculate the interest on: ";
+	cout << "\n Now enter the number of months you would like to calculate the interest on: ";
 	cin >> month;
 
-	cout << "Finaly enter the interest which the bank will pay you: ";
+	cout << "\n Finaly enter the interest which the bank will pay you: ";
 	cin >> interest;
 
 	// Function Calls.
-	recursiveMode(balance, interest, month);
+
+	cout << endl << endl << " Recursive Mode.........\n\n";
+	recursiveMode(balance, interest, month, time);
+	system("pause");
+
+	cout << endl << endl << " Iterative Mode.........\n\n";
 	iterativeMode(balance, interest, month);
 
 	return 0;
 }
 
 
-void recursiveMode(double balance, double interest, int month){
+void recursiveMode(double balance, double interest, int month, int time){
 
 	// Calculates the new balance by recursively calling itself.
 
-	int time = 1;
-
-	if (time == month)
+	
+	if (time != month)
 	{
+
+		newBalance += + pow((1 * interest), time) * balance;
+
+		cout << "\n The new balance after " << time << " months of interest is payed is: " << newBalance << endl;
+
+		//newBalance += pow((1 * interest), time) * balance;
+		
+	}else if(time == month){
+
 		// Escape the function.
 		cout << "The new balance after interest is payed is: " << newBalance << endl;
 		return;
-	}else{
-
-		newBalance += pow((1 * interest), time) * balance;
 	}
-	recursiveMode(newBalance, interest, time + 1);
+	return recursiveMode(newBalance, interest, month, time + 1);
 
 	//return newBalance;
 }
+
 
 void iterativeMode(double balance, double interest, int month){
 
 	// Calculates the new balance by iterating the months one by one until the calculation is complete.
 
-	for (int i = 0; i < month; ++i)
+	for (int i = 0; i <= month; i++)
 	{
-		newBalance = pow((1 * interest), i) * balance;
+		newBalance = balance + pow((1 * interest), i) * balance;
+		
+		cout << "\n The new balance after " << i << " months of interest is payed is: " << newBalance << endl;
 	}
 
-	cout << "The new balance after interest is payed is: " << newBalance << endl;
+	cout << endl;
+
+	system("pause");
 
 	//	return newBalance;
 }
