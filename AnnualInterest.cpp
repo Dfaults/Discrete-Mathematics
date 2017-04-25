@@ -9,8 +9,8 @@
 				 A bank pay 6% annual interest on saving, compounding the interest monthly. If we deposit $1000 on the 
 				 first day of May, how much will this deposit be worth a year later? Write a program to solve the above problem.
 				 Use two versions:
-						Using iterative solution
-						Recursive solution
+						1. Using iterative solution
+						2. Recursive solution
 */
 
 #include <iostream>
@@ -43,7 +43,6 @@ int main(int argc, char const *argv[])
 	cin >> interest;
 
 	// Function Calls.
-
 	cout << endl << endl << " Recursive Mode.........\n\n";
 	recursiveMode(balance, interest, month, time);
 	system("pause");
@@ -77,7 +76,6 @@ void recursiveMode(double balance, double interest, int month, int time){
 	}
 	return recursiveMode(newBalance, interest, month, time + 1);
 
-	//return newBalance;
 }
 
 
@@ -96,5 +94,5 @@ void iterativeMode(double balance, double interest, int month){
 
 	system("pause");
 
-	//	return newBalance;
+	
 }
