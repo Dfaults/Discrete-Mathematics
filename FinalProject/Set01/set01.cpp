@@ -8,12 +8,16 @@ void equalFunction();
 void printMatch(bool flag, double match, const int SIZE);
 void inverseRelation();
 void yearlyInvestment();
+void recursiveMode(double balance, double interest, int year, int time);
+void iterativeMode(double balance, double interest, int year);
 
 
+// Variable Declarations.
 
 const int SIZE = 5;
 bool flag = false;
-double X[SIZE], Y[SIZE];
+double X[SIZE], Y[SIZE], balance, interest, newBalance;
+int time = 0, year;
 
 int main(int argc, char const *argv[])
 {
@@ -43,7 +47,7 @@ int main(int argc, char const *argv[])
 		case 5:
 			return 0;
 		default:
-			cout << " Please choose one of the options above in order to perform an action \n\n";
+			cout << "\n Please choose one of the options above in order to perform an action \n\n";
 	}
 
 
@@ -55,7 +59,7 @@ void equalFunction(){
 	// This function calculates the first option in the SET (Determine whether X value equals Y value).
 	
 
-	cout << " Enter the values of the first array. There must be " << SIZE << " values in this array and separated by white spaces: ";
+	cout << " \n Enter the values of the first array. There must be " << SIZE << " values in this array and separated by white spaces: ";
 		for (int i = 0; i < SIZE; ++i)
 		{
 			/* Get the input for X array */
@@ -121,26 +125,33 @@ void printMatch(bool flag, double match, const int SIZE) {
 void inverseRelation() {
 
 	const int ARRAY_SIZE = 3;
-	double straight[ARRAY_SIZE], reverse[ARRAY_SIZE];
+	double straight01[ARRAY_SIZE], straight02[ARRAY_SIZE], reverse[ARRAY_SIZE];
 
-	cout << " There are " << ARRAY_SIZE << " Spaces in this array and they must be separated by white spaces when entering values. \n\n";
-	cout << " Please tell me the values you would like to have in the array: ";
+	cout << "\n There are " << ARRAY_SIZE << " Spaces in this array and they must be separated by white spaces when entering values. \n\n";
+	cout << " Please enter the values you would like to have in the first array: ";
 	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
-		cin >> straight[i];
+		cin >> straight01[i];
 	}
 
+	cout << "\n Now please enter the second array in order to create the ordered pairs: ";
 	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		cin >> straight02[i];
+	}
+
+	/*for (int i = 0; i < ARRAY_SIZE; i++)
 	{
 		reverse[i] = straight[i];
-	}
+	}*/
 
 	cout << endl;
 
-	cout << " The reversse order of the array is: ";
+	cout << " The reversse order of the pairs is: ";
 	for (int i = ARRAY_SIZE - 1; i >= 0; i--)
 	{
-		cout << reverse[i] << " ";
+		cout << "(" << straight02[i] << "," << straight01[i] << ") ";
+		//cout << reverse[i] << " ";
 	}
 
 	cout << endl;
@@ -151,5 +162,71 @@ void inverseRelation() {
 
 void yearlyInvestment() {
 
+	cout << " \n Welcome to the investment calculator! follow the instructions in order to get your yearly interest calculated. \n\n";
 
+	cout << "\n Please enter the balance for the account: ";
+	cin >> balance;
+
+	cout << "\n Now enter the number of years you would like to calculate the interest on: ";
+	cin >> year;
+
+	cout << "\n Finaly enter the interest which the bank will pay you: ";
+	cin >> interest;
+
+	// Function Calls.
+
+	cout << endl << endl << " Recursive Mode.........\n\n";
+	recursiveMode(balance, interest, year, time);
+	system("pause");
+
+	cout << endl << endl << " Iterative Mode.........\n\n";
+	iterativeMode(balance, interest, year);
+
+
+	system("pause");
+}
+
+
+void recursiveMode(double balance, double interest, int year, int time){
+
+	// Calculates the new balance by recursively calling itself.
+
+	
+	if (time != year)
+	{
+
+		newBalance = + pow((1 * interest), time) * balance;
+
+		cout << "\n The new balance after " << time << " years of interest is payed is: " << newBalance << endl;
+
+		//newBalance += pow((1 * interest), time) * balance;
+		
+	}else if(time == year){
+
+		// Escape the function.
+		cout << "The new balance after interest is payed is: " << newBalance << endl;
+		return;
+	}
+	return recursiveMode(newBalance, interest, year, time + 1);
+
+	//return newBalance;
+}
+
+
+void iterativeMode(double balance, double interest, int year){
+
+	// Calculates the new balance by iterating the years one by one until the calculation is complete.
+
+	for (int i = 0; i <= year; i++)
+	{
+		newBalance = balance + pow((1 * interest), i) * balance;
+		
+		cout << "\n The new balance after " << i << " years of interest is payed is: " << newBalance << endl;
+	}
+
+	cout << endl;
+
+	system("pause");
+
+	//	return newBalance;
 }
