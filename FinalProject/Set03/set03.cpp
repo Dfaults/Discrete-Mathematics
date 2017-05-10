@@ -10,7 +10,7 @@ void iterativeMode(double balance, double interest, int year);
 
 const int SIZE = 5;
 double X[SIZE], Y[SIZE], balance, interest, newBalance;
-int time = 0, year;
+int time = 0, year, option;
 
 int main(int argc, char const *argv[])
 {
